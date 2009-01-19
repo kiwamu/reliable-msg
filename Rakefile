@@ -115,7 +115,7 @@ EOF
     spec.email = "assaf@labnotes.org"
     spec.homepage = "http://github.com/assaf/reliable-msg"
 
-    spec.files = FileList["{bin,test,lib,docs}/**/*", "README.rdoc", "MIT-LICENSE", "Rakefile", "changelog.txt"].to_a
+    spec.files = FileList["{bin,test,lib,docs}/**/*", "README.rdoc", "MIT-LICENSE", "Rakefile", "CHANGELOG"].to_a
     spec.require_path = "lib"
     spec.autorequire = "reliable-msg.rb"
     spec.bindir = "bin"
