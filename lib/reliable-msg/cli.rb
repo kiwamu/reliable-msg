@@ -207,8 +207,7 @@ Available options:
           puts "Could not find configuration file #{config.path}"
           exit
         end
-        drb = Config::DEFAULT_DRB
-        drb.merge(config.drb) if config.drb
+        drb = Config::DEFAULT_DRB.merge(config.drb || {})
         drb_uri = "druby://localhost:#{drb['port']}"
       else
         drb_uri = Queue::DEFAULT_DRB_URI
