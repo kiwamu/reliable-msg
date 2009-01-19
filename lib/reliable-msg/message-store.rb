@@ -381,12 +381,13 @@ module ReliableMsg
     begin
 
       # Make sure we have a MySQL library before creating this class,
-      # worst case we end up with a disk-based message store. Try the
-      # native MySQL library, followed by the Rails MySQL library.
+      # worst case we end up with a disk-based message store.
+      # The Rails doesn't have MySQL library from version 2.2.2.
       begin
         require "mysql"
-      rescue LoadError
-        require "active_record/vendor/mysql"
+      rescue LoadError => le
+        # require "active_record/vendor/mysql"
+        raise le
       end
 
       class MySQL < Base #:nodoc:
